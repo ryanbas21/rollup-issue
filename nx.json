@@ -6,19 +6,33 @@
     "defaultBase": "main"
   },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nrwl/web"
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "nx/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "YTk5YjY4ZmQtYzNkNC00NmRhLWJlYzctNGE0NGZjNjA3MGUyfHJlYWQtd3JpdGU="
       }
+    }
+  },
+  "workspaceLayout": {
+    "appsDir": "",
+    "libsDir": ""
+  },
+  "defaultProject": "app-1",
+  "generators": {
+    "@nrwl/web:application": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/web:library": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
     }
   }
 }

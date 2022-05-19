@@ -9,12 +9,16 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es2015",
-    "module": "esnext",
+    "module": "ES2015",
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@rollup-issue/my-package": ["packages/my-package/src/index.ts"],
+      "@rollup/libs/lib-a": ["libs/lib-a/src/index.ts"],
+      "@rollup/libs/lib-b": ["libs/lib-b/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
