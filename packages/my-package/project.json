@@ -1,10 +1,11 @@
 {
+  "name": "my-package",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/my-package/src",
   "projectType": "library",
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
+      "executor": "@nrwl/rollup:rollup",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/my-package",
@@ -15,7 +16,7 @@
       }
     },
     "publish": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "command": "node tools/scripts/publish.mjs my-package {args.ver} {args.tag}"
       },
@@ -35,7 +36,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/my-package"],
+      "outputs": ["{workspaceRoot}/coverage/packages/my-package"],
       "options": {
         "jestConfig": "packages/my-package/jest.config.ts",
         "passWithNoTests": true

@@ -1,4 +1,5 @@
 {
+  "name": "lib-b",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/lib-b/src",
   "projectType": "library",
@@ -22,7 +23,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/lib-b"],
+      "outputs": ["{workspaceRoot}/coverage/libs/lib-b"],
       "options": {
         "jestConfig": "libs/lib-b/jest.config.ts",
         "passWithNoTests": true
